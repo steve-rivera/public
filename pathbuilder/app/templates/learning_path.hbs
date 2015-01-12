@@ -1,18 +1,15 @@
 <h1 id="Subtitle">Hello</h1>
 
-<div class='title'>{{title}}</div>
+{{toggle-edit-text-field value=title action='saveAll'}}
 
 <br/>
-
-{{#if editIntro}}
-  {{view 'text_field' valueBinding='introduction' classNames='introduction'}}
-{{else}}
-  <div {{action 'editIntro'}} class='introduction'>{{introduction}}</div>
-{{/if}}
+{{toggle-edit-textarea value=introduction action='saveAll'}}
 
 <br/>
-<div class='prerequisites'>{{prerequisites}}</div>
+{{toggle-edit-textarea value=prerequisites action='saveAll'}}
+
 <br/>
-<div class='completion'>{{completion}}</div>
+{{toggle-edit-textarea value=completion action='saveAll'}}
+
 <br/>
-<div class='resources'>{{resources}}</div>
+{{toggle-edit-textarea value=resources action='saveAll'}}

@@ -1,0 +1,6 @@
+{{#if editing}}
+  {{input valueBinding='value'}}
+{{else}}
+  <div {{action 'startEdit'}} >{{value}}</div>
+{{/if}}
+

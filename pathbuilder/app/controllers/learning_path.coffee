@@ -1,10 +1,8 @@
 `import Ember from "ember"`
 
 LearningPathController = Ember.ObjectController.extend
-  editIntro: false
-
   actions:
-    editIntro: ->
-      @set('editIntro', true)
+    saveAll: ->
+      @get('model').save()
 
 `export default LearningPathController`
