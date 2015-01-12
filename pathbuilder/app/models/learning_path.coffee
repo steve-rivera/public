@@ -13,10 +13,10 @@ shortLorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 LearningPath.reopenClass
   FIXTURES: [
     {
-      id: 0
+      id: 1
       title: 'My Learning Path'
       introduction: longLorem
-      prerequisites: '\n'.join(shortLorem for i in (0..3))
+      prerequisites: (shortLorem for i in [0...3]).join('\n')
       completion: longLorem
       resources: longLorem
     }

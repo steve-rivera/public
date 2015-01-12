@@ -1,1 +1,18 @@
-Hello
+<h1 id="Subtitle">Hello</h1>
+
+<div class='title'>{{title}}</div>
+
+<br/>
+
+{{#if editIntro}}
+  {{view 'text_field' valueBinding='introduction' classNames='introduction'}}
+{{else}}
+  <div {{action 'editIntro'}} class='introduction'>{{introduction}}</div>
+{{/if}}
+
+<br/>
+<div class='prerequisites'>{{prerequisites}}</div>
+<br/>
+<div class='completion'>{{completion}}</div>
+<br/>
+<div class='resources'>{{resources}}</div>

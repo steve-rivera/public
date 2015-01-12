@@ -5,6 +5,6 @@ LearningPathRoute = Ember.Route.extend
     controller.set('model', model)
 
   model: (params) ->
-    @store.find(params['id'])
+    @store.find('learning_path', params['id'])
 
 `export default LearningPathRoute`
