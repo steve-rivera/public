@@ -7,9 +7,12 @@
   </div>
   {{#if expanded}}
     {{#each asset in learningModule.assets}}
-      <a class='asset-link'>
+      {{#link-to 'learning_path.learning_module'
+                 learningModule.id
+                 (query-params assetId=asset.id)
+                 class="asset-link"}}
        {{asset.title}}
-      </a>
+      {{/link-to}}
     {{/each}}
     <a {{action 'addContentToModule' learningModule}} class='add-content to-module'>
       + Add More Content

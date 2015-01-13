@@ -8,6 +8,10 @@ Asset =  DS.Model.extend
   assets: DS.hasMany('asset')
   value: DS.belongsTo AssetValue, polymorphic: true
 
+  assetIdString: (->
+    "asset_#{@get('id')}"
+  ).property 'id'
+
 
 Asset.reopenClass
   FIXTURES: [
