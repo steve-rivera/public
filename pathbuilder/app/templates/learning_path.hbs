@@ -1,15 +1,7 @@
-<h1 id="Subtitle">Hello</h1>
+{{render 'outline' model}}
 
-{{toggle-edit-text-field value=title action='saveAll'}}
+<div class='center'>
+  {{outlet}}
+</div>
 
-<br/>
-{{toggle-edit-textarea value=introduction action='saveAll'}}
-
-<br/>
-{{toggle-edit-textarea value=prerequisites action='saveAll'}}
-
-<br/>
-{{toggle-edit-textarea value=completion action='saveAll'}}
-
-<br/>
-{{toggle-edit-textarea value=resources action='saveAll'}}
+{{outlet 'collaboration'}}

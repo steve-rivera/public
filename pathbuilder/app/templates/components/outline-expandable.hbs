@@ -1,0 +1,23 @@
+<div class='expandable'>
+  <div class='expandable-heading'>
+    <div class='expandable-title'>
+      {{learningModule.title}}
+    </div>
+    {{#if expanded}}
+      <img {{action 'toggleExpand'}} src="/dummy.svg" class="expanded"/>
+    {{else}}
+      <img {{action 'toggleExpand'}} src="/dummy.svg" class="unexpanded"/>
+    {{/if}}
+    </img>
+  </div>
+  {{#if expanded}}
+    {{#each asset in learningModule.assets}}
+      <a class='asset-link'>
+       {{asset.title}}
+      </a>
+    {{/each}}
+    <a {{action 'addContent' learningModule}} class='add-content to-module'>
+      + Add More Content
+    </a>
+  {{/if}}
+</div>

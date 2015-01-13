@@ -3,4 +3,6 @@
 
 ApplicationRoute = Ember.Route.extend(ApplicationRouteMixin)
 
+
+
 `export default ApplicationRoute`
