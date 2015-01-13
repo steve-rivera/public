@@ -2,6 +2,7 @@
 
 TextAsset = AssetValue.extend
   assetType: 'TEXT BOX'
+  assetTypeImageSrc: '/dummy.svg'
   assetBodyTemplate: 'text_body'
 
 TextAsset.reopenClass

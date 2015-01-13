@@ -5,7 +5,7 @@ condensedViewStyle = 'Condensed View'
 expandedViewStyle = 'Expanded View'
 
 LearningModuleController = Ember.ObjectController.extend
-  queryParams: [ 'assetId' ]
+  queryParams: [ 'assetId', 'viewStyle' ]
   assetId: null
   viewStyles: [ standardViewStyle, condensedViewStyle, expandedViewStyle ]
   viewStyle: standardViewStyle

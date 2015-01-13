@@ -1,8 +1,9 @@
-<div class='asset standard' {{bind-attr id=assetIdString}}>
+<div class='asset condensed' {{bind-attr id=assetIdString}}>
+  <img class='asset-type-image' {{bind-attr src=value.assetTypeImageSrc}}/>
+  <h2 class='asset-title'>
+    {{title}}
+  </h2>
   <div class='controls'>
-    <div class='asset-type asset-control'>
-      {{value.assetType}}
-    </div>
     <div class='asset-details asset-control'>
       <img class='edit-asset-image asset-control-icon' src='/dummy.svg'/>
       <div class='text'>
@@ -11,15 +12,10 @@
     </div>
     <div class='asset-delete asset-control'>
       <img class='detele-asset-image asset-control-icon' src='/dummy.svg'/>
+      <div class='text'>
+        Delete
+      </div>
     </div>
   </div>
-  <h2 class='asset-title'>
-    {{title}}
-  </h2>
-  <div class='asset-description'>
-    {{description}}
-  </div>
-  {{#with value as value}}
-    {{partial value.assetBodyTemplate}}
-  {{/with}}
 </div>
+

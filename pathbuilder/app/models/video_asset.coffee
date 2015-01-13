@@ -4,6 +4,7 @@
 VideoAsset = AssetValue.extend
   assetType: 'VIDEO'
   assetBodyTemplate: 'video_body'
+  assetTypeImageSrc: '/dummy.svg'
   url: DS.attr('string')
 
 VideoAsset.reopenClass
