@@ -12,6 +12,9 @@ LearningPathRoute = Ember.Route.extend
     # They are necessary when using a fixtures adapter.
     @store.find('learning_module')
     @store.find('asset')
+    @store.find('user')
+    @store.find('collaborate')
+    @store.find('event')
     @store.find('video_asset')
     @store.find('text_asset')
     @store.find('learning_path_family')
@@ -29,5 +32,9 @@ LearningPathRoute = Ember.Route.extend
     addModuleToPath: ->
       # FIXME: Implement this.
       console.log "Called addModuleToPath"
+
+    addCollaborators: ->
+      # FIXME: Implement this.
+      console.log "Called addCollaborators"
 
 `export default LearningPathRoute`

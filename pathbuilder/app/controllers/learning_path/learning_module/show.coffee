@@ -35,4 +35,8 @@ LearningModuleController = Ember.ObjectController.extend
       else throw "Unrecognized viewStyle: #{@get('viewStyle')}"
   ).property 'viewStyle'
 
+  actions:
+    saveModule: ->
+      @get('model').save()
+
 `export default LearningModuleController`

@@ -9,6 +9,12 @@ LearningPath =  DS.Model.extend
   resources: DS.attr('string')
   learningModules: DS.hasMany 'learning_module'
   family: DS.belongsTo 'learning_path_family'
+  collaborates: DS.hasMany 'collaborate'
+  events: DS.hasMany 'event'
+
+  collaborators: Ember.computed.mapBy 'collaborates', 'user'
+  sortedEvents: Ember.computed.sort 'events', 'eventsSorting'
+  eventsSorting: [ 'createdAt' ]
 
 longLorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum."
 shortLorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -25,6 +31,7 @@ LearningPath.reopenClass
       resources: longLorem
       family: 1
       learningModules: [1]
+      events: [1]
     }
   ]
 

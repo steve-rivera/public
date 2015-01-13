@@ -5,7 +5,6 @@ Asset =  DS.Model.extend
   title: DS.attr('string')
   description: DS.attr('string')
   learningModule: DS.belongsTo 'learningModule'
-  assets: DS.hasMany('asset')
   value: DS.belongsTo AssetValue, polymorphic: true
 
   assetIdString: (->

@@ -13,11 +13,11 @@
       <img class='detele-asset-image asset-control-icon' src='/dummy.svg'/>
     </div>
   </div>
-  <h2 class='asset-title'>
-    {{title}}
-  </h2>
+  <div class='asset-title'>
+    {{toggle-edit-text-field value=title action="saveAsset"}}
+  </div>
   <div class='asset-description'>
-    {{description}}
+    {{toggle-edit-textarea value=description action="saveAsset"}}
   </div>
   {{#with value as value}}
     {{partial value.assetBodyTemplate}}

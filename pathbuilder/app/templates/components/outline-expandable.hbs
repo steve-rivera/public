@@ -1,13 +1,13 @@
 <div class='expandable'>
   <div class='expandable-heading'>
-    {{#link-to "learning_path.learning_module" learningModule.id}}
+    {{#link-to "learning_path.learning_module.show" learningModule.id}}
       {{learningModule.title}}
     {{/link-to}}
     <img {{action 'toggleExpand'}} {{bind-attr class=expandedClass}} {{bind-attr src=arrowImageSrc}}/>
   </div>
   {{#if expanded}}
     {{#each asset in learningModule.assets}}
-      {{#link-to 'learning_path.learning_module'
+      {{#link-to 'learning_path.learning_module.show'
                  learningModule.id
                  (query-params assetId=asset.id)
                  class="asset-link"}}

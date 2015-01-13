@@ -1,6 +1,6 @@
 <div id='learning-module-page'>
   <h1>
-    <div class='learning-module-title'>{{title}}</div>
+    {{toggle-edit-text-field value=title action="saveModule"}}
     {{view "select" content=viewStyles value=viewStyle}}
   </h1>
   {{partial innerTemplateName}}
