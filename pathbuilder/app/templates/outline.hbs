@@ -8,10 +8,14 @@
     <div class='short-description'>
       {{toggle-edit-text-field value=shortDescription action='saveAll'}}
     </div>
+  </div>
+  <div class='outline-modules'>
     {{#each learningModule in learningModules}}
       {{outline-expandable learningModule=learningModule expanded=false}}
     {{/each}}
   </div>
-
+  <a {{action 'addModuleToPath'}} class='add-content to-path'>
+    + Add Another Module
+  </a>
 </div>
 

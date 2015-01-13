@@ -7,7 +7,7 @@ Router = Ember.Router.extend
 Router.map ->
   @route 'learning_path', path: 'path/:path_id', ->
     @route 'summary', path: 'summary'
-    @route 'module', 'module/:module_id'
+    @route 'learning_module', path: 'module/:module_id'
 
 
 `export default Router`

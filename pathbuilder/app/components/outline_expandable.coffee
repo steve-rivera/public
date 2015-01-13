@@ -14,9 +14,9 @@ OutlineExpandableComponent = Ember.Component.extend
 
   arrowImageSrc: (->
     if @get('expanded')
-      'http://www.google.com'
+      '/dummy.svg'
     else
-      'http://www.google.com'
+      '/dummy.svg'
   ).property 'expanded'
 
   actions:

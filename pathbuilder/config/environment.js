@@ -6,10 +6,15 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    contentSecurityPolicy: {
+      'frame-src': " www.youtube.com ",
+      'report-uri': "http://localhost:4200",
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
+        'ember-htmlbars': true,
       }
     },
 

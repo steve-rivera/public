@@ -1,6 +1,8 @@
 `import AssetValue from "pathbuilder/models/asset_value"`
 
-TextAsset = AssetValue.extend()
+TextAsset = AssetValue.extend
+  assetType: 'Text'
+  assetBodyTemplate: 'text_body'
 
 TextAsset.reopenClass
   FIXTURES: [

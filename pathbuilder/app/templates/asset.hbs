@@ -1,0 +1,25 @@
+<div class='asset'>
+  <div class='controls'>
+    <div class='asset-type asset-control'>
+      {{value.assetType}}
+    </div>
+    <div class='asset-details asset-control'>
+      <img class='edit-asset-image asset-control-icon' src='/dummy.svg'/>
+      <div class='text'>
+        Details
+      </div>
+    </div>
+    <div class='asset-delete asset-control'>
+      <img class='detele-asset-image asset-control-icon' src='/dummy.svg'/>
+    </div>
+  </div>
+  <h2 class='asset-title'>
+    {{title}}
+  </h2>
+  <div class='asset-description'>
+    {{description}}
+  </div>
+  {{#with value as value}}
+    {{partial value.assetBodyTemplate}}
+  {{/with}}
+</div>

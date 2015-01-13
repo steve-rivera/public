@@ -1,0 +1,10 @@
+<div id='learning-module-page'>
+  <h1>
+    <div class='learning-module-title'>{{title}}</div>
+    {{view "select" content=viewStyles value=viewStyle}}
+  </h1>
+  {{partial innerTemplateName}}
+  <button {{action 'addContentToModule'}} class='add-content to-module'>
+    Add More Content
+  </button>
+</div>

@@ -12,12 +12,22 @@ LearningPathRoute = Ember.Route.extend
     # They are necessary when using a fixtures adapter.
     @store.find('learning_module')
     @store.find('asset')
+    @store.find('video_asset')
+    @store.find('text_asset')
     @store.find('learning_path_family')
     @store.find('learning_module_family')
-    @store.find('learning_path', params['path_id'])
+    @store.find('learning_path', params.path_id)
 
   actions:
     saveAll: ->
       @get('controller').get('model').save()
+
+    addContentToModule: (learningModule) ->
+      # FIXME: Implement this.
+      console.log "Called addContentToModule"
+
+    addModuleToPath: ->
+      # FIXME: Implement this.
+      console.log "Called addModuleToPath"
 
 `export default LearningPathRoute`
