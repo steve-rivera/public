@@ -15,10 +15,11 @@ Event = DS.Model.extend
   learningPath: DS.belongsTo 'learning_path'
 
   eventType: DS.attr 'string'
-  # These relationships may or may not be used.  It all depends on the type.
+  # These relationships and attrs may or may not be used.  It all depends on the type.
   asset: DS.belongsTo 'asset'
   learningModule: DS.belongsTo 'learning_module'
   user: DS.belongsTo 'user'
+  string: DS.belongsTo 'string'
 
   eventTemplate: (->
     switch @get('eventType')
