@@ -2,7 +2,7 @@
 `import DS from "ember-data"`
 
 VideoAsset = AssetValue.extend
-  assetType: 'Video'
+  assetType: 'VIDEO'
   assetBodyTemplate: 'video_body'
   url: DS.attr('string')
 

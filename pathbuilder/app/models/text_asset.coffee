@@ -1,7 +1,7 @@
 `import AssetValue from "pathbuilder/models/asset_value"`
 
 TextAsset = AssetValue.extend
-  assetType: 'Text'
+  assetType: 'TEXT BOX'
   assetBodyTemplate: 'text_body'
 
 TextAsset.reopenClass
