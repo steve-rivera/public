@@ -1,0 +1,17 @@
+<div id='collaboration'>
+  <div id='collaborators'>
+    <h4>Collaborators</h4>
+    {{#each user in collaborators}}
+      <img {{bind-attr src=user.smallImageSrc}}/>
+    {{/each}}
+    <button {{action 'addCollaborators'}} id='add-collaborators'>
+      Add Collaborators
+    </button>
+  </div>
+  <div id='activity'>
+    <h4>Activity</h4>
+    {{#each event in sortedEvents}}
+      {{render 'event' event}}
+    {{/each}}
+  </div>
+</div>

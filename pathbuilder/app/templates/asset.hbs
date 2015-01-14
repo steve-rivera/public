@@ -1,0 +1,20 @@
+<div class='asset standard' {{bind-attr id=assetIdString}}>
+  <div class='controls'>
+    <div class='asset-type asset-control'>
+      {{value.assetType}}
+    </div>
+    {{partial 'asset_details'}}
+    <div {{action 'deleteAsset' model}} class='asset-delete asset-control'>
+      <img class='detele-asset-image asset-control-icon' src='/dummy.svg'/>
+    </div>
+  </div>
+  <div class='asset-title'>
+    {{toggle-edit-text-field value=title action="saveAsset"}}
+  </div>
+  <div class='asset-description'>
+    {{toggle-edit-textarea value=description action="saveAsset"}}
+  </div>
+  {{#with value as value}}
+    {{partial value.assetBodyTemplate}}
+  {{/with}}
+</div>

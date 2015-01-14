@@ -1,0 +1,21 @@
+<div id='outline'>
+  <div class='top'>
+    <div class='title'>
+      {{#link-to 'learning_path.summary' model.id}}
+        {{title}}
+      {{/link-to}}
+    </div>
+    <div class='short-description'>
+      {{toggle-edit-text-field value=shortDescription action='saveAll'}}
+    </div>
+  </div>
+  <div class='outline-modules'>
+    {{#each learningModule in learningModules}}
+      {{outline-expandable learningModule=learningModule expanded=false}}
+    {{/each}}
+  </div>
+  <a {{action 'addModuleToPath'}} class='add-content to-path'>
+    + Add Another Module
+  </a>
+</div>
+
