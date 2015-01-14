@@ -1,5 +1,17 @@
 <div class='standard-module-view inner-module-view'>
-  {{#each asset in assets}}
-    {{render 'asset' asset}}
-  {{/each}}
+  {{#if multipleAssets}}
+    {{render 'asset' firstAsset}}
+    {{#each asset in restAssets}}
+      {{#draggable-object-target action='reinsertAsset' before=asset}}
+        <div class='text'>
+          ADD CONTENT HERE
+        </div>
+      {{/draggable-object-target}}
+      {{#draggable-object content=asset}}
+        {{render 'asset' asset}}
+      {{/draggable-object}}
+    {{/each}}
+  {{else}}
+    {{render 'asset' firstAsset}}
+  {{/if}}
 </div>

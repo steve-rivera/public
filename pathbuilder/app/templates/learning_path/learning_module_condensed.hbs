@@ -1,6 +1,18 @@
 <div class='condensed-module-view inner-module-view'>
-  {{#each asset in assets}}
-    {{render 'condensed_asset' asset}}
-  {{/each}}
+  {{#if multipleAssets}}
+    {{render 'condensed_asset' firstAsset}}
+    {{#each asset in restAssets}}
+      {{#draggable-object-target action='reinsertAsset' before=asset}}
+        <div class='text'>
+          ADD CONTENT HERE
+        </div>
+      {{/draggable-object-target}}
+      {{#draggable-object content=asset}}
+        {{render 'condensed_asset' asset}}
+      {{/draggable-object}}
+    {{/each}}
+  {{else}}
+    {{render 'condensed_asset' firstAsset}}
+  {{/if}}
 </div>
 

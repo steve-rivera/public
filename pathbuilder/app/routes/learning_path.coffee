@@ -47,4 +47,8 @@ LearningPathRoute = Ember.Route.extend
       # FIXME: Implement this.
       console.log "Called addCollaborators"
 
+    reinsertAsset: (asset, options) ->
+      beforeAsset = options.target.before
+      console.log "Reinsert #{asset.get('id')} before #{beforeAsset.get('id')}."
+
 `export default LearningPathRoute`
