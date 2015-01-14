@@ -6,6 +6,9 @@ LearningModule =  DS.Model.extend
   family: DS.belongsTo 'learning_module_family'
   learningPath: DS.belongsTo 'learning_path'
 
+  multipleAssets: Ember.computed.gt 'assets.length', 1
+  firstAsset: Ember.computed.alias 'assets.firstObject'
+  restAssets: (-> @get('assets').slice(1)).property 'assets.[]'
 
 LearningModule.reopenClass
   FIXTURES: [
