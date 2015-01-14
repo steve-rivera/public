@@ -31,7 +31,7 @@ LearningPath.reopenClass
       resources: longLorem
       family: 1
       learningModules: [1]
-      events: [1]
+      events: [1, 2, 3, 4]
     }
   ]
 

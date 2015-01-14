@@ -8,7 +8,7 @@ Asset =  DS.Model.extend
   value: DS.belongsTo AssetValue, polymorphic: true
 
   skippable: DS.attr('boolean')
-  comentsAllowed: DS.attr('boolean')
+  commentsAllowed: DS.attr('boolean')
 
   assetIdString: (->
     "asset_#{@get('id')}"
