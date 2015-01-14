@@ -1,0 +1,23 @@
+<div class='asset-detail'>
+  <div class='asset-title'>
+    {{toggle-edit-text-field value=title action="saveAsset"}}
+  </div>
+  <div class='asset-content'>
+    <div class='display-asset'>
+    {{toggle-edit-textarea value=description action="saveAsset"}}
+    {{partial value.displayTemplate}}
+    </div>
+    <div class='asset-options-and-remove'>
+      {{render 'learning_path/learning_module/asset_options' model}}
+      <a {{action 'deleteAsset' model}}>
+        Remove this {{value.assetTypeDescription}} from module
+      </a>
+    </div>
+  </div>
+  <div class='asset-activity'>
+    <h2>Asset Activity</h2>
+    {{#each event in relevantEvents}}
+      {{render 'event' event}}
+    {{/each}}
+  </div>
+</div>

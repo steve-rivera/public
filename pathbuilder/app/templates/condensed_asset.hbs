@@ -4,13 +4,8 @@
     {{title}}
   </h2>
   <div class='controls'>
-    <div class='asset-details asset-control'>
-      <img class='edit-asset-image asset-control-icon' src='/dummy.svg'/>
-      <div class='text'>
-        Details
-      </div>
-    </div>
-    <div class='asset-delete asset-control'>
+    {{partial 'asset_details'}}
+    <div {{action 'deleteAsset' model}} class='asset-delete asset-control'>
       <img class='detele-asset-image asset-control-icon' src='/dummy.svg'/>
       <div class='text'>
         Delete

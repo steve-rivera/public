@@ -3,8 +3,11 @@
 
 VideoAsset = AssetValue.extend
   assetType: 'VIDEO'
+  assetTypeDescription: 'video'
   assetBodyTemplate: 'video_body'
   assetTypeImageSrc: '/dummy.svg'
+  specialOptionsTemplate: 'video_options'
+  displayTemplate: 'video_display'
   url: DS.attr('string')
 
 VideoAsset.reopenClass

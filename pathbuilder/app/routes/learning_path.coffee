@@ -37,4 +37,15 @@ LearningPathRoute = Ember.Route.extend
       # FIXME: Implement this.
       console.log "Called addCollaborators"
 
+    deleteAsset: (asset) ->
+      # FIXME: Implement this.
+      console.log "Called deleteAsset"
+
+    viewAssetDetail: (asset) ->
+      learningPath = @get('controller').get('model')
+      @transitionTo 'learning_path.learning_module.asset',
+        learningPath.get('id'),
+        asset.get('learningModule.id'),
+        asset.get('id')
+
 `export default LearningPathRoute`

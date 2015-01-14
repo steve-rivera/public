@@ -19,7 +19,7 @@ Event = DS.Model.extend
   asset: DS.belongsTo 'asset'
   learningModule: DS.belongsTo 'learning_module'
   user: DS.belongsTo 'user'
-  string: DS.belongsTo 'string'
+  string: DS.attr 'string'
 
   eventTemplate: (->
     switch @get('eventType')

@@ -5,6 +5,6 @@ AssetRoute = Ember.Route.extend
     controller.set('model', model)
 
   model: (params) ->
-    @store.find('assets', params.asset_id)
+    @store.find('asset', params.asset_id)
 
 `export default AssetRoute`

@@ -2,8 +2,11 @@
 
 TextAsset = AssetValue.extend
   assetType: 'TEXT BOX'
+  assetTypeDescription: 'text'
   assetTypeImageSrc: '/dummy.svg'
   assetBodyTemplate: 'text_body'
+  specialOptionsTemplate: 'text_options'
+  displayTemplate: 'text_display'
 
 TextAsset.reopenClass
   FIXTURES: [
