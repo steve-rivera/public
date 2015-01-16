@@ -1,10 +1,15 @@
-<div id='learning-module-page'>
-  <h1>
+<div class='module'>
+
+  <h1 class='l-mbl'>
     {{toggle-edit-text-field value=title action="saveModule"}}
-    {{view "select" content=viewStyles value=viewStyle}}
   </h1>
+
+	{{view "select" content=viewStyles value=viewStyle class="module__view-select"}}
+
   {{partial innerTemplateName}}
-  <button {{action 'addContentToModule'}} class='add-content to-module'>
+
+  <button {{action 'addContentToModule'}} class='button'>
     Add More Content
   </button>
+
 </div>

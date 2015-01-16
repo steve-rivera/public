@@ -1,21 +1,31 @@
-<div class='expandable'>
-  <div class='expandable-heading'>
+<div class='outline__module'>
+
+  <div class='outline__row outline__module__title'>
     {{#link-to "learning_path.learning_module.show" learningModule.id}}
       {{learningModule.title}}
     {{/link-to}}
-    <img {{action 'toggleExpand'}} {{bind-attr class=expandedClass}} {{bind-attr src=arrowImageSrc}}/>
+    <i class="fa fa-chevron-right" {{action 'toggleExpand'}} {{bind-attr class=expandedClass}}></i>
   </div>
+
   {{#if expanded}}
+
     {{#each asset in learningModule.assets}}
-      {{#link-to 'learning_path.learning_module.show'
-                 learningModule.id
-                 (query-params assetId=asset.id)
-                 class="asset-link"}}
-       {{asset.title}}
-      {{/link-to}}
+      <div class='outline__row'>
+        {{#link-to 'learning_path.learning_module.show'
+                   learningModule.id
+                   (query-params assetId=asset.id)
+                   class="outline__asset"}}
+          {{asset.title}}
+        {{/link-to}}
+      </div>
     {{/each}}
-    <a {{action 'addContentToModule' learningModule}} class='add-content to-module'>
-      + Add More Content
-    </a>
+
+    <div class='outline__row'>
+      <a {{action 'addContentToModule' learningModule}} class='outline__asset outline__asset--add'>
+        + Add More Content
+      </a>
+    </div>
+
   {{/if}}
+
 </div>

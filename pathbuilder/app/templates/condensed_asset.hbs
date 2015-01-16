@@ -1,16 +1,28 @@
-<div class='asset condensed' {{bind-attr id=assetIdString}}>
-  <img class='asset-type-image' {{bind-attr src=value.assetTypeImageSrc}}/>
-  <h2 class='asset-title'>
-    {{title}}
-  </h2>
-  <div class='controls'>
-    {{partial 'asset_details'}}
-    <div {{action 'deleteAsset' model}} class='asset-delete asset-control'>
-      <img class='detele-asset-image asset-control-icon' src='/dummy.svg'/>
-      <div class='text'>
-        Delete
-      </div>
-    </div>
-  </div>
+<div class='asset asset--condensed' {{bind-attr id=assetIdString}}>
+
+  <table width='100%'>
+    <tr>
+      <td width='5%'>
+        <i {{bind-attr class=value.assetTypeIcon}}></i>
+      </td>
+      <td width='65%'>
+        <h2 class='asset__title'>
+          {{toggle-edit-text-field value=title action="saveAsset"}}
+        </h2>
+      </td>
+      <td width='30%'>
+        <span class='asset__info__item asset__info__item--condensed' {{action 'viewAssetDetail' model}}>
+          <i class='fa fa-pencil'></i>
+          Details
+        </span>
+
+        <span class='asset__info__item asset__info__item--condensed' {{action 'deleteAsset' model}}>
+          <i class='fa fa-trash'></i>
+          Delete
+        </span>
+      </td>
+    </tr>
+  </table>
+
 </div>
 

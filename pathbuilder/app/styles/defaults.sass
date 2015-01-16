@@ -1,5 +1,348 @@
-html, body
-  margin: 20px
+$beige: #F0EEE9
+$blue1: #2B3A42
+$blue2: #3F5765
+$blue3: #BDD4DE
+$gray1: #444444
+$gray2: #888888
+$gray3: #AAAAAA
+$gray4: #EFEFEF 
+$orange: #FF530D
+
+*
+	margin: 0
+	outline: none
+	padding: 0
+
+a
+	@include transition(all, .1s)
+	color: $orange
+	text-decoration: none
+
+	&:hover
+		color: darken($orange, 10%)
+		text-decoration: underline
+
+.activity
+	padding: 30px 20px
+
+body, html
+	color: $gray1
+	font-family: 'Merriweather Sans', sans-serif
+	font-size: 16px
+	font-weight: 300
+	height: 100%
+
+.button
+	@include linear-gradient(lighten($orange, 2%), darken($orange, 5%))
+	border: none
+	border-radius: 4px
+	box-shadow: inset 0 -3px 0 rgba(0, 0, 0, .4), 0 3px 3px rgba(0, 0, 0, .1)
+	color: white
+	cursor: pointer
+	font-family: 'Merriweather Sans', sans-serif
+	font-size: .6em
+	font-weight: 600
+	outline: none
+	padding: 11px 20px 12px 20px
+	text-transform: uppercase
+
+	&:hover
+		@include linear-gradient(darken($orange, 2%), darken($orange, 10%))
+
+.button--blue
+	@include linear-gradient(lighten($blue2, 20%), lighten($blue2, 15%))
+
+	&:hover
+		@include linear-gradient(lighten($blue2, 16%), lighten($blue2, 11%))
+
+
+.asset
+	border: 1px solid #f2f2f2
+	cursor: pointer
+	padding: 10px
+	position: relative
+
+	&:hover
+		border: 1px dashed $blue3
+
+		.asset__info
+			opacity: .7
+
+		.asset__info--condensed
+			opacity: 1
+
+.asset__add-new
+	cursor: pointer
+	margin: 10px 0
+	padding: 10px 0
+
+	hr
+		border: none;
+		border-top: 1px solid $orange
+		box-shadow: none;
+		color: $orange
+		font-size: .7em
+		font-weight: 700
+		margin-top: 14px
+		text-align: center
+		text-transform: uppercase
+
+		&::after
+			background: white
+			content: 'Add Content Here'
+			padding: 0 20px
+			position: relative
+			top: -8px
+
+.asset__content
+
+.asset__info
+	@include transition(all .2s)
+	opacity: 0
+	position: absolute
+	right: 0
+	top: -4px
+
+.asset__info--condensed
+	opacity: 1
+	position: static
+
+.asset__info__item
+	background: $orange
+	color: white
+	display: inline-block
+	font-size: .65em
+	font-weight: 600
+	padding: 2px 6px
+	text-transform: uppercase
+
+.asset__info__item--condensed
+	background: none
+	color: $orange
+	font-size: 1em
+	font-weight: 400
+	text-transform: none
+
+.editing
+	background: none
+	border: 1px solid darken($blue3, 20%)
+	font-family: inherit
+	font-size: inherit
+	font-weight: inherit
+	width: 100%
+
+.editable
+	border: 1px solid rgba(255, 255, 255, 0)
+
+	&:hover
+		border: 1px solid $blue3
+
+.collaborators
+	padding: 30px 20px
+
+.collaborator-image
+	width: 35px
+
+.ember-view
+	height: 100%
+
+.event
+	color: rgba(255, 255, 255, .7)
+
+	a
+		color: inherit
+		text-decoration: underline
+
+	img
+		float: left
+		margin-right: 10px
+
+h1
+	font-size: 3em
+	font-weight: 300
+
+h2
+	font-size: 1.1em
+
+h4
+	font-size: .7em
+	text-transform: uppercase
+
+header
+	@include outer-container(100%)
+	background: $blue1
+	color: white
+	padding: 15px 20px
+	position: absolute;
+	width: 100%;
+	z-index: 999
+
+	.logo-container
+		@include span-columns(3)
+
+		.logo
+			background: url(/logo.png) no-repeat
+			background-size: 100%
+			display: block
+			height: 23px
+			margin-top: 3px
+			width: 120px
+
+	.search-container
+		@include span-columns(6)
+
+		input
+			background: none
+			border: none
+			border-bottom: 1px solid rgba(255, 255, 255, .5)
+			color: white
+			font-family: inherit
+			font-size: inherit
+			font-weight: inherit
+			padding-left: 20px
+			padding-bottom: 3px
+			width: 100%
+
+		i
+			color: rgba(255, 255, 255, .8)
+			position: absolute
+
+	ul	
+		@include span-columns(3)
+
+		li
+			list-style: none
+			float: right
+
+			i
+				font-size: .7em !important
+				position: relative
+				top: -2px
+
+.image--small
+	width: 30px
+
+.l-mbs
+	margin-bottom: 10px
+
+.l-mbm
+	margin-bottom: 20px
+
+.l-mbl
+	margin-bottom: 40px
+
+.l-mbxl
+	margin-bottom: 80px
+
+.l-mts
+	margin-top: 10px
+
+.l-mtm
+	margin-top: 20px
+
+.l-mtl
+	margin-top: 40px
+
+.l-mtxl
+	margin-top: 80px
+
+main
+	height: 100%
+	padding-right: 320px
+
+.module
+	height: 100%
+	overflow-y: scroll
+	padding: 30px 40px 60px 0
+	position: relative
+
+	.ember-view
+		height: auto
+
+	h1
+		width: 80%
+
+.module__view-select
+	position: absolute
+	right: 40px
+	top: 60px
+
+.outline
+	width: 100%
+
+.outline__asset
+	color: darken($beige, 40%)
+	font-size: .8em
+	margin-left: 10px
+
+.outline__asset--add, .outline__module--add
+	color: $orange
+	font-size: .65em !important
+	font-weight: 600
+	text-transform: uppercase
+
+.outline__header
+	border-bottom: 1px solid darken($beige, 8%)
+	padding: 30px 40px 30px 20px
+
+.outline__header__title
+	font-size: 1.6em
+	font-weight: 300
+
+.outline__module--add
+	display: block;
+	padding: 12px 20px
+
+.outline__module__title
+	font-weight: 400
+
+	i
+		@include transition(all .1s)
+		cursor: pointer
+		float: right
+		font-size: .8em
+		position: relative
+		top: 4px
+
+		&.expanded
+			@include transform(rotate(90deg))
+
+.outline__row
+	border-bottom: 1px solid darken($beige, 8%)
+	padding: 12px 40px 12px 20px
+	@include transition(background .1s)
+
+	&:hover
+		background: rgba(0, 0, 0, .02)
+		cursor: pointer
+
+.panel
+	height: 100%
+	padding-top: 50px !important
+
+.panel--center
+	@include span-columns(9)
+	@include omega()
+
+.panel--left
+	@include span-columns(3)
+	background: $beige
+	overflow-y: scroll
+
+.panel--right
+	color: white
+	background: $blue2
+	box-shadow: -5px 0 5px rgba(0, 0, 0, .1)
+	position: absolute;
+	right: 0
+	width: 320px
+
+.text--small
+	font-size: .8em
+
+.wrap
+	@include outer-container(100%)
+	height: 100%
 
 textarea
   display: block
