@@ -5,7 +5,9 @@ LearningPathLearningModuleRoute = Ember.Route.extend
     controller.set('model', model)
 
   model: (params) ->
-    @store.find('learning_module', params.module_id)
+    @store.find('module_branch',
+      ids: [ params.module_branch_id ]
+      deep: true).then (branches) -> branches.get('firstObject.draft')
 
 `export default LearningPathLearningModuleRoute`
 
