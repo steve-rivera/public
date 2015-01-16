@@ -3,28 +3,17 @@
 LearningModule =  DS.Model.extend
   title: DS.attr('string')
   assets: DS.hasMany('asset')
-  family: DS.belongsTo 'learning_module_family'
-  learningPath: DS.belongsTo 'learning_path'
+  branch: DS.belongsTo 'module_branch', inverse: null
+  path: DS.belongsTo 'learning_path'
+  index: DS.attr 'number'
+  publishedAt: DS.attr 'date'
 
   multipleAssets: Ember.computed.gt 'assets.length', 1
-  firstAsset: Ember.computed.alias 'assets.firstObject'
-  restAssets: (-> @get('assets').slice(1)).property 'assets.[]'
+  orderedAssets: Ember.computed.sort 'assets', 'assetsSorting'
+  assetsSorting: [ 'index' ]
+  firstAsset: Ember.computed.alias 'orderedAssets.firstObject'
+  restAssets: (-> @get('orderedAssets').slice(1)).property 'orderedAssets.[]'
 
-LearningModule.reopenClass
-  FIXTURES: [
-    {
-      id: 1
-      title: 'Module 1'
-      assets: [
-        1
-        2
-        3
-        4
-      ]
-      family: 1
-      learningPath: 1
-    }
-  ]
 
 `export default LearningModule`
 

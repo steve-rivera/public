@@ -1,8 +1,9 @@
 {{#if multipleAssets}}
-  {{render 'condensed_asset' firstAsset}}
+  {{#draggable-object content=firstAsset}}
+    {{render 'condensed_asset' firstAsset}}
+  {{/draggable-object}}
 
   {{#each asset in restAssets}}
-
     {{#draggable-object-target action='reinsertAsset' before=asset}}
       <div class='asset__add-new'>
         <hr>
@@ -10,14 +11,14 @@
     {{/draggable-object-target}}
 
     {{#draggable-object content=asset}}
-      {{render 'condensed_asset' asset}}
+      {{render 'condensed_asset' asset controller='asset'}}
     {{/draggable-object}}
-    
+
   {{/each}}
 
 {{else}}
-  {{render 'condensed_asset' firstAsset}}
+  {{#if firstAsset}}
+    {{render 'condensed_asset' firstAsset}}
+  {{/if}}
 
 {{/if}}
-
-

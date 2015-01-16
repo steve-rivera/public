@@ -9,12 +9,13 @@ module.exports = function(environment) {
     contentSecurityPolicy: {
       'frame-src': " www.youtube.com ",
       'report-uri': "http://localhost:4200",
+      'font-src': " 'self' http://maxcdn.bootstrapcdn.com/ http://fonts.gstatic.com ",
+      'style-src': " 'self' http://maxcdn.bootstrapcdn.com/ http://fonts.gstatic.com http://fonts.googleapis.com ",
     },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
-        'ember-htmlbars': true,
       }
     },
 

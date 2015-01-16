@@ -35,46 +35,4 @@ Event = DS.Model.extend
       else throw "Unrecognized event type."
   ).property 'eventType'
 
-Event.reopenClass
-  FIXTURES: [
-    {
-      id: 1
-      createdAt:  "2014-02-07T16:44:57.000Z"
-      eventType: addAssetToModule
-      asset: 1
-      learningModule: 1
-      learningPath: 1
-      user: 1
-      string: null
-    }
-    {
-      id: 2
-      createdAt:  "2014-02-07T16:44:57.000Z"
-      eventType: renameModule
-      learningModule: 1
-      learningPath: 1
-      user: 1
-      string: "Poorly Named Module"
-    }
-    {
-      id: 3
-      createdAt:  "2014-02-07T16:44:57.000Z"
-      eventType: addModuleToPath
-      learningModule: 1
-      learningPath: 1
-      user: 2
-      string: ""
-    }
-    {
-      id: 4
-      createdAt:  "2014-02-07T16:44:57.000Z"
-      eventType: renameAsset
-      learningModule: 1
-      learningPath: 1
-      asset: 3
-      user: 2
-      string: "Build a REST API in GO"
-    }
-  ]
-
 `export default Event`
