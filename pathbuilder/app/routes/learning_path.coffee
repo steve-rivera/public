@@ -1,4 +1,5 @@
 `import Ember from "ember"`
+`import reorder from "pathbuilder/utils/reorder"`
 
 LearningPathRoute = Ember.Route.extend
   renderTemplate: (controller, model) ->
@@ -41,7 +42,9 @@ LearningPathRoute = Ember.Route.extend
     reinsertAsset: (asset, options) ->
       beforeAsset = options.target.before
       assets = asset.get('learningModule.assets')
-      assets.reinsertBeforeObject(asset, beforeAsset)
-      #console.log "Reinsert #{asset.get('id')} before #{beforeAsset.get('id')}."
+      i = assets.indexOf(asset)
+      j = assets.indexOf(beforeAsset)
+      reorder(assets, 'index', i, j-i)
+
 
 `export default LearningPathRoute`

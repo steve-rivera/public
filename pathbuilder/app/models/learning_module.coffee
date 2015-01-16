@@ -9,8 +9,11 @@ LearningModule =  DS.Model.extend
   publishedAt: DS.attr 'date'
 
   multipleAssets: Ember.computed.gt 'assets.length', 1
-  firstAsset: Ember.computed.alias 'assets.firstObject'
-  restAssets: (-> @get('assets').slice(1)).property 'assets.[]'
+  orderedAssets: Ember.computed.sort 'assets', 'assetsSorting'
+  assetsSorting: [ 'index' ]
+  firstAsset: Ember.computed.alias 'orderedAssets.firstObject'
+  restAssets: (-> @get('orderedAssets').slice(1)).property 'orderedAssets.[]'
+
 
 `export default LearningModule`
 
