@@ -31,6 +31,7 @@ body, html
 	font-size: 16px
 	font-weight: 300
 	height: 100%
+	min-width: 1200px
 
 .button
 	@include linear-gradient(lighten($orange, 2%), darken($orange, 5%))
@@ -143,7 +144,7 @@ body, html
 .collaborator-image
 	width: 35px
 
-.ember-view
+body > .ember-view
 	height: 100%
 
 .event
@@ -172,9 +173,10 @@ header
 	@include outer-container(100%)
 	background: $blue1
 	color: white
+	min-width: 1200px
 	padding: 15px 20px
-	position: absolute;
-	width: 100%;
+	position: absolute
+	width: 100%
 	z-index: 999
 
 	.logo-container
@@ -250,14 +252,11 @@ main
 	height: 100%
 	padding-right: 320px
 
-.module
+.module, .summary
 	height: 100%
 	overflow-y: scroll
 	padding: 30px 40px 60px 0
 	position: relative
-
-	.ember-view
-		height: auto
 
 	h1
 		width: 80%
@@ -290,7 +289,8 @@ main
 	font-weight: 300
 
 .outline__module--add
-	display: block;
+	cursor: pointer
+	display: block
 	padding: 12px 20px
 
 .outline__module__title
@@ -318,7 +318,7 @@ main
 
 .panel
 	height: 100%
-	padding-top: 50px !important
+	padding-top: 56px !important
 
 .panel--center
 	@include span-columns(9)
