@@ -11,7 +11,7 @@ LearningPathRoute = Ember.Route.extend
   model: (params) ->
     @store.find('path_branch',
       ids: [params.path_branch_id]
-      deep: true).then (branches) -> branches.get('firstObject.tip')
+      deep: true).then (branches) -> branches.get('firstObject.draft')
 
   actions:
     saveAll: ->
