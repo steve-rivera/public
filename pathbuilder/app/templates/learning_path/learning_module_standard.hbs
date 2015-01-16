@@ -1,17 +1,21 @@
-<div class='standard-module-view inner-module-view'>
-  {{#if multipleAssets}}
-    {{render 'asset' firstAsset}}
-    {{#each asset in restAssets}}
-      {{#draggable-object-target action='reinsertAsset' before=asset}}
-        <div class='text'>
-          ADD CONTENT HERE
-        </div>
-      {{/draggable-object-target}}
-      {{#draggable-object content=asset}}
-        {{render 'asset' asset}}
-      {{/draggable-object}}
-    {{/each}}
-  {{else}}
-    {{render 'asset' firstAsset}}
-  {{/if}}
-</div>
+{{#if multipleAssets}}
+  {{render 'asset' firstAsset}}
+
+  {{#each asset in restAssets}}
+  
+    {{#draggable-object-target action='reinsertAsset' before=asset}}
+      <div class='asset__add-new'>
+        <hr>
+      </div>
+    {{/draggable-object-target}}
+
+    {{#draggable-object content=asset}}
+      {{render 'asset' asset}}
+    {{/draggable-object}}
+
+  {{/each}}
+
+{{else}}
+  {{render 'asset' firstAsset}}
+
+{{/if}}

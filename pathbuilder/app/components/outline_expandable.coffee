@@ -12,13 +12,6 @@ OutlineExpandableComponent = Ember.Component.extend
       'collapsed'
   ).property 'expanded'
 
-  arrowImageSrc: (->
-    if @get('expanded')
-      '/dummy.svg'
-    else
-      '/dummy.svg'
-  ).property 'expanded'
-
   actions:
     toggleExpand: ->
       expanded = @get('expanded')

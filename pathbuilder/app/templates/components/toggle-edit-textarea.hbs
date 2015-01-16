@@ -1,6 +1,6 @@
 {{#if editing}}
-  {{textarea type='text' autoresize='true' valueBinding='value'}}
+  {{textarea type='text' autoresize='true' valueBinding='value' class='editing'}}
 {{else}}
-  <div {{action 'startEdit'}} >{{value}}</div>
+  <div class='editable' {{action 'startEdit'}} >{{value}}</div>
 {{/if}}
 

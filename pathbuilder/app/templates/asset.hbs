@@ -1,20 +1,34 @@
-<div class='asset standard' {{bind-attr id=assetIdString}}>
-  <div class='controls'>
-    <div class='asset-type asset-control'>
-      {{value.assetType}}
-    </div>
-    {{partial 'asset_details'}}
-    <div {{action 'deleteAsset' model}} class='asset-delete asset-control'>
-      <img class='detele-asset-image asset-control-icon' src='/dummy.svg'/>
-    </div>
+<div class='asset' {{bind-attr id=assetIdString}}>
+
+  <div class='asset__title l-mbs'>
+    <h2>
+      {{toggle-edit-text-field value=title action="saveAsset"}}
+    </h2>
   </div>
-  <div class='asset-title'>
-    {{toggle-edit-text-field value=title action="saveAsset"}}
-  </div>
-  <div class='asset-description'>
+
+  <div class='asset__description'>
     {{toggle-edit-textarea value=description action="saveAsset"}}
   </div>
-  {{#with value as value}}
-    {{partial value.assetBodyTemplate}}
-  {{/with}}
+
+  <div class='asset__content l-mtm'>
+    {{#with value as value}}
+      {{partial value.assetBodyTemplate}}
+    {{/with}}
+  </div>
+
+  <div class='asset__info'>
+    <span class='asset__info__item asset__info__item--blue'>
+      {{value.assetType}}
+    </span>
+
+    <span class='asset__info__item' {{action 'viewAssetDetail' model}}>
+      <i class='fa fa-pencil'></i>
+      Details
+    </span>
+
+    <span class='asset__info__item' {{action 'deleteAsset' model}}>
+      <i class='fa fa-trash'></i>
+    </span>
+  </div>
+
 </div>

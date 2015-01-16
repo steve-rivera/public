@@ -5,6 +5,7 @@ VideoAsset = AssetValue.extend
   assetType: 'VIDEO'
   assetTypeDescription: 'video'
   assetBodyTemplate: 'video_body'
+  assetTypeIcon: 'fa fa-video-camera'
   assetTypeImageSrc: '/dummy.svg'
   specialOptionsTemplate: 'video_options'
   displayTemplate: 'video_display'
