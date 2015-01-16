@@ -10,19 +10,5 @@ User =  DS.Model.extend
     "#{@get('firstname')} #{@get('lastname')[0]}."
   ).property 'firstname', 'lastname'
 
-User.reopenClass
-  FIXTURES: [
-    {
-      id: 1
-      firstname: "Steve"
-      lastname: "Rivera"
-    }
-    {
-      id: 2
-      firstname: "Korei"
-      lastname: "Klein"
-    }
-  ]
-
 `export default User`
 

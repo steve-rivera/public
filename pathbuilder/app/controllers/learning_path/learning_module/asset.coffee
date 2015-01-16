@@ -3,10 +3,10 @@
 AssetController = Ember.ObjectController.extend
   relevantEvents: (->
     asset = @get('model')
-    allEvents = @get('learningModule.learningPath.sortedEvents')
+    allEvents = @get('learningModule.path.sortedEvents')
     allEvents.filter (event) ->
       event.get('asset') is asset
-  ).property 'learningModule.learningPath.sortedEvents', 'model'
+  ).property 'learningModule.path.sortedEvents', 'model'
 
   actions:
     saveAsset: ->

@@ -8,18 +8,9 @@ LearningPathRoute = Ember.Route.extend
     controller.set('model', model)
 
   model: (params) ->
-    # FIXME: Remove these first calls to store.find.
-    # They are necessary when using a fixtures adapter.
-    @store.find('learning_module')
-    @store.find('asset')
-    @store.find('user')
-    @store.find('collaborate')
-    @store.find('event')
-    @store.find('video_asset')
-    @store.find('text_asset')
-    @store.find('learning_path_family')
-    @store.find('learning_module_family')
-    @store.find('learning_path', params.path_id)
+    @store.find('path_branch',
+      ids: [params.path_branch_id]
+      deep: true).then (branches) -> branches.get('firstObject.tip')
 
   actions:
     saveAll: ->
@@ -49,6 +40,8 @@ LearningPathRoute = Ember.Route.extend
 
     reinsertAsset: (asset, options) ->
       beforeAsset = options.target.before
-      console.log "Reinsert #{asset.get('id')} before #{beforeAsset.get('id')}."
+      assets = asset.get('learningModule.assets')
+      assets.reinsertBeforeObject(asset, beforeAsset)
+      #console.log "Reinsert #{asset.get('id')} before #{beforeAsset.get('id')}."
 
 `export default LearningPathRoute`
